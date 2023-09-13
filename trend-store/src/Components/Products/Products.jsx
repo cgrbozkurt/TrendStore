@@ -1,10 +1,10 @@
-import products from "../../ProductData";
+import products from "../../productData";
 import ProductItem from "./ProductItem";
 import "./Products.css";
 
 const Products = () => {
   const productList = products.map((product) => (
-    <ProductItem product={product} key={product.id} />
+    <ProductItem key={product.id} product={product} />
   ));
 
   return (
