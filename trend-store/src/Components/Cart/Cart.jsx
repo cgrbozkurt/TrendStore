@@ -1,6 +1,7 @@
 import CartItem from "./CartItem";
 import products from "../../productData";
 import "./Cart.css";
+import OffCanvas from "../UI/OffCanvas";
 
 const Cart = (props) => {
   const cartItems = (
@@ -12,9 +13,11 @@ const Cart = (props) => {
   );
 
   return (
-    <div className="offcanvas">
-      <div className="content">
-        <div className="cart-head">
+    
+      
+       <OffCanvas onClose={props.onClose}>
+         <div>
+          <div className="cart-head">
           <h2>Sepetim</h2>
           <a href="/" className="cart-close" onClick={props.onClose}>
             X
@@ -29,8 +32,10 @@ const Cart = (props) => {
           <button className="cart-order">Sipariş Ver</button>
           <button className="cart-clear">Temizle</button>
         </div>
-      </div>
-    </div>
+    
+        </div>
+       </OffCanvas>
+  
   );
 };
 

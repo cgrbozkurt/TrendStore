@@ -3,6 +3,7 @@ import Cart from "./Components/Cart/Cart";
 import Products from "./Components/Products/Products";
 import Hero from "./components/Hero/Hero";
 import Header from "./components/Layout/Header";
+import CartProvider from "./context/CartProvider";
 
 
 function App() {
@@ -17,12 +18,14 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {cartIsShow && <Cart onClose={hideCardHandler}/>}
+  <CartProvider>
+       {cartIsShow && <Cart onClose={hideCardHandler}/>}
       <Header onShowCart={showCardHandler}  />
       <Hero />
       <Products />
-    </div>
+  </CartProvider>
+  
+    
   );
 }
 
