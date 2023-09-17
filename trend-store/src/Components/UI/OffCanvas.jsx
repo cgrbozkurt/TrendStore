@@ -1,9 +1,10 @@
 import { Fragment } from "react";
-import * as ReactDOM from 'react-dom';
-import "./OffCanvas.css";
+import ReactDOM from "react-dom";
+
+import "./Offcanvas.css";
 
 const Backdrop = (props) => {
-  return <div className="backdrop" onClick={props.onClose}></div>;
+  return <div className="backdrop" onClick={props.onClose} />;
 };
 
 const OffcanvasOverlay = (props) => {
@@ -14,17 +15,20 @@ const OffcanvasOverlay = (props) => {
   );
 };
 
-const OffCanvas = (props) => {
+const Offcanvas = (props) => {
   const portalElement = document.getElementById("overlays");
-
   return (
     <Fragment>
       {ReactDOM.createPortal(
         <Backdrop onClose={props.onClose} />,
         portalElement
       )}
-      {ReactDOM.createPortal(<OffcanvasOverlay>{props.children}</OffcanvasOverlay>,portalElement )}
+      {ReactDOM.createPortal(
+        <OffcanvasOverlay>{props.children}</OffcanvasOverlay>,
+        portalElement
+      )}
     </Fragment>
   );
 };
-export default OffCanvas;
+
+export default Offcanvas;
