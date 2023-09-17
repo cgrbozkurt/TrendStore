@@ -1,11 +1,11 @@
 import "./Header.css";
 import HeaderCartButton from "./HeaderCartButton";
 
-const Header = ({ onShowCart }) => {
+const Header = ({ onShowCart, cartIsShow }) => {
   return (
     <header className="header">
       <h1>Trend Mağaza</h1>
-      <HeaderCartButton onShowCart={onShowCart} />
+      <HeaderCartButton onShowCart={onShowCart} cartIsShow={cartIsShow} />
     </header>
   );
 };

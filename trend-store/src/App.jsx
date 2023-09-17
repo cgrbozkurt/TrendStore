@@ -20,7 +20,7 @@ function App() {
   return (
     <CartProvider>
       {cartIsShow && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
+      <Header onShowCart={showCartHandler} cartIsShow={cartIsShow} />
       <Hero />
       <Products />
     </CartProvider>
