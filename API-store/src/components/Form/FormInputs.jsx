@@ -1,15 +1,17 @@
 import { useState } from "react";
 import "./FormInputs.css";
+import useHttp from "../../hooks/use-http";
 
-const FormInputs = () => {
-  const [inputValues, setInputValues] = useState({
-    title: "",
-    price: "",
-    image: "",
-    category: "",
-  });
+const inialValues = {
+  title: "",
+  price: "",
+  image: "",
+  category: "",
+};
 
- 
+const FormInputs = ({ onAddProduct }) => {
+  const [inputValues, setInputValues] = useState(inialValues);
+  const { isLoading, error, sendRequest: sendProductRequest } = useHttp();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,8 +21,37 @@ const FormInputs = () => {
     }));
   };
 
+  const createProduct = () => {
+    const generatedId = inputValues.title;
+    const createdProduct = { id: generatedId, ...inputValues };
+
+    onAddProduct(createdProduct);
+    setInputValues(inialValues);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { image, ...rest } = inputValues;
+    const newData = {
+      ...rest,
+      img: image,
+    };
+
+    sendProductRequest(
+      {
+        url: "https://my-pos-application-api.onrender.com/api/products/create-product",
+        method: "POST",
+        body: newData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+      createProduct(newData)
+    );
+  };
+
   return (
-    <form className="product-form">
+    <form className="product-form" onSubmit={handleSubmit}>
       <div className="form-title">
         <label htmlFor="title">Title</label>
         <input
