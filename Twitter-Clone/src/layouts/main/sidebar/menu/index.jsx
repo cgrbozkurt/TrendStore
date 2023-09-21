@@ -46,8 +46,8 @@ export default function Menu() {
 
 
         </button>
-        <Button>
-            Gönder
+        <Button size={"large"}>
+            Abone Ol
         </Button>
     </nav>
   );
