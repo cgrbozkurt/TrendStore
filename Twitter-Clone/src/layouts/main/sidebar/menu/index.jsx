@@ -8,7 +8,7 @@ export default function Menu() {
   return (
     <nav className="mt-0.5 mb-1 p-1 ">
       {mainMenu.map((menu,index) => (
-        <NavLink key={menu.title} to={menu.path} className="py-0 block group">
+        <NavLink key={index} to={menu.path} className="py-0 block group">
           {({ isActive }) => (
             <div
               className={classNames( "p-3 rounded-full inline-flex items-center  transition-colors gap-5  group-hover:bg-[#eff3f41a]",

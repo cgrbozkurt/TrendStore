@@ -5,7 +5,7 @@ currentAccount:   {
     id:1,
     username:"Bozkurt",
     fullName:"Çağrı Bozkurt",
-    avatar:"https://twitter.com/arBozkurt7/photo"
+    avatar:"https://pbs.twimg.com/profile_images/1327677429004066817/qm0iU2Kx_400x400.jpg"
 },
 accounts:[]
 }
