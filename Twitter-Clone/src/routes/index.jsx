@@ -4,14 +4,19 @@ import Explore from "../pages/explore";
 import Notifications from "../pages/notifications";
 import MainLayout from "../layouts/main";
 import Profile from "../pages/profile";
+import Messages from "../pages/messages";
+import Lists from "../pages/lists";
+import Bookmarks from "../pages/bookmarks";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children: [
-      { index: true,
-         element: <Home /> },
+      {
+        index: true,
+        element: <Home />,
+      },
       {
         path: "explore",
         element: <Explore />,
@@ -21,10 +26,28 @@ const routes = createBrowserRouter([
         element: <Notifications />,
       },
       {
-        path:"/:username",
-        element:<Profile/>
+        path: "lists",
+        element: <Lists />,
+      }
+      ,
+      {
+        path: "bookmarks",
+        element: <Bookmarks />,
+      }
+      ,
+      {
+        path: "messages",
+        element: <Messages />,
       },
-      { path: "*", element: "<NotFound/>" },
+
+      {
+        path: "/:slug",
+        element: <Profile />,
+      },
+      {
+        path: "*",
+        element: "<NotFound/>",
+      },
     ],
   },
 ]);

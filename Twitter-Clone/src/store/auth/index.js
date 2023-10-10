@@ -7,7 +7,20 @@ currentAccount:   {
     fullName:"Çağrı Bozkurt",
     avatar:"https://pbs.twimg.com/profile_images/1327677429004066817/qm0iU2Kx_400x400.jpg"
 },
-accounts:[]
+accounts:[
+    {
+        id:1,
+        username:"Bozkurt",
+        fullName:"Çağrı Bozkurt",
+        avatar:"https://pbs.twimg.com/profile_images/1327677429004066817/qm0iU2Kx_400x400.jpg"
+    },
+    {
+        id:1,
+        username:"baybars",
+        fullName:"Baybars Enes Bozkurt",
+        avatar:"https://pbs.twimg.com/profile_images/1694713583874236416/fH1sjI7H_400x400.png"
+    },
+]
 }
 
 const auth = createSlice({
