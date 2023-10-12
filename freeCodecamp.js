@@ -168,3 +168,28 @@ function randomFraction() {
   function checkEqual(a, b) {
     return a === b ? "Equal" : "Not Equal";
   }
+
+  const cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+let i = 0;
+let len = cars.length;
+let text = "";
+
+for (; i < len; ) {
+  text += cars[i] + "<br>";
+  i++;
+}
+
+let sayi = prompt("Lütfen bir sayı giriniz.");
+    
+let faktoriyel = 1;
+
+if(sayi < 0) {
+    console.log("Lütfen pozitif bir tamsayı giriniz!")
+} else{
+
+    for(let i = 1; i <= sayi; i++){
+        faktoriyel = faktoriyel * i;
+    }
+    console.log("Faktöriyel : " + faktoriyel);
+}
