@@ -1,28 +1,27 @@
-import "./App.css";
-import {RouterProvider, createBrowserRouter} from "react-router-dom"
-import HomePage from "./pages/home";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import HomePage from "./pages/Home";
 import ProductsPage from "./pages/Products";
-import { Fragment } from "react";
-import MainNavigationBar from "./layouts/MainNavigationBar";
+import "./App.css";
+import RootLayout from "./pages/Root";
+import ErrorPage from "./pages/Error";
 
-
-const router= createBrowserRouter([
+const router = createBrowserRouter([
   {
-    path:"/",
-    element: <HomePage/>
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/products", element: <ProductsPage /> },
+    ],
   },
-  {
-    path:"products",
-    element: <ProductsPage />
-  }
-])
+]);
 
 function App() {
   return (
-    <Fragment>
-      
-    <RouterProvider router={router} />
-    </Fragment>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 

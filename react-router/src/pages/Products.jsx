@@ -1,9 +1,11 @@
-
+import { Fragment } from "react";
 
 const ProductsPage = () => {
   return (
-    <div>My Products</div>
-  )
-}
+    <Fragment>
+      <h1>My Products Page</h1>
+    </Fragment>
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;

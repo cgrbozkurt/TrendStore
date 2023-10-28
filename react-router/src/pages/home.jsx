@@ -1,16 +1,14 @@
-import { Fragment } from "react"
-import { Link } from "react-router-dom"
-import MainNavigationBar from "../layouts/MainNavigationBar"
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
     <Fragment>
-        <MainNavigationBar/>
-        <h1>My Home Page</h1>
-
-        <Link to="/products" >Go To Products Page </Link>
+      <h1>My Home Page</h1>
+      {/* <a href="/products">Go to Producs Page</a> */}
+      <Link to="/products">Go to Producs Page</Link>
     </Fragment>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
