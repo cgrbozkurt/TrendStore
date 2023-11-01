@@ -2,13 +2,14 @@ import React, { Fragment } from "react";
 
 const Products = ({ product, basket, setBasket }) => {
   const basketItem = basket.find((item) => item.id === product.id);
+const basketWithoutCurrent=basket.filter(item=>item.id!==product.id);
 
   const addBasket = () => {
     const checkBasket = basket.find((item) => item.id === product.id);
     if (checkBasket) {
       checkBasket.amount += 1;
       setBasket([
-        ...basket.filter((item) => item.id !== product.id),
+        ...basketWithoutCurrent,
         checkBasket,
       ]);
     } else {
@@ -26,11 +27,11 @@ const Products = ({ product, basket, setBasket }) => {
     const checkBasket = basket.find((item) => item.id === product.id);
       checkBasket.amount -= 1;
     if(checkBasket.amount===0){
-      setBasket([...basket.filter(item=>item.id!==product.id)])
+      setBasket([...basketWithoutCurrent])
     }
 
       else{setBasket([
-        ...basket.filter((item) => item.id !== product.id),
+        ...basketWithoutCurrent,
         checkBasket,
       ]);}
     
