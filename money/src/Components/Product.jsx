@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const Products = ({ product, basket, setBasket }) => {
+const Products = ({ product, basket, setBasket}) => {
   const basketItem = basket.find((item) => item.id === product.id);
 const basketWithoutCurrent=basket.filter(item=>item.id!==product.id);
 
