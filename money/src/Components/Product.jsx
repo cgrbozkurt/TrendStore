@@ -12,12 +12,13 @@ const basketWithoutCurrent=basket.filter(item=>item.id!==product.id);
         ...basketWithoutCurrent,
         checkBasket,
       ]);
-    } else {
+    }
+     else {
       setBasket([
         ...basket,
         {
           id: product.id,
-          amount: 1,
+          amount: 1
         },
       ]);
     }

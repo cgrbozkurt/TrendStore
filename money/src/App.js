@@ -1,7 +1,7 @@
 import './App.css';
 import {useState,useEffect} from "react"
 import Header from './Components/Header';
-import Products from './Components/products.json';
+import Products from './Components/products';
 import Product from "./Components/Product"
 
 function App() {

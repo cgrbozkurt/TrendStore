@@ -1,4 +1,4 @@
-[
+export const Product=[
     {
       "id": 1,
       "title": "Sakız",
